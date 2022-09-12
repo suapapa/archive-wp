@@ -1,15 +1,19 @@
 - 452objects, 37M
 
 
-Convert upload links:
-```
-http://web.suapapa.net:8080/wordpress/wp-content/uploads -> https://homin.dev/asset/suapapa-blog/wp-content_uploads
-http://www.suapapa.net/wordpress/wp-content/uploads
-http://commondatastorage.googleapis.com/suapapablog%2Fuploads
+Convert upload links to `https://homin.dev/asset/suapapa-blog/wp-content_uploads`:
+- http://web.suapapa.net:8080/wordpress/wp-content/uploads
+- http://www.suapapa.net/wordpress/wp-content/uploads
+- /wordpress/wp-content/uploads
 
-/wordpress/wp-content/uploads ->
-https://homin.dev/asset/suapapa-blog/wp-content_uploads
-```
+Convert wordpress address to `https://homin.dev/wp`
+- http://web.suapapa.net:8080/wordpress
+- http://www.suapapa.net/wordpress
+
+Convert site address to `https://homin.dev`
+- http://web.suapapa.net:8080
+- http://www.suapapa.net
+
 
 Make a program to convert wordpress links to blogger link
 ```
