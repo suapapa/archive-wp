@@ -1,10 +1,12 @@
 - 452objects, 37M
 
+## Update content links
 
 Convert upload links to `https://homin.dev/asset/suapapa-blog/wp-content_uploads`:
 - http://web.suapapa.net:8080/wordpress/wp-content/uploads
 - http://www.suapapa.net/wordpress/wp-content/uploads
 - /wordpress/wp-content/uploads
+- wp-content/uploads
 
 Convert wordpress address to `https://homin.dev/wp`
 - http://web.suapapa.net:8080/wordpress
@@ -15,18 +17,19 @@ Convert site address to `https://homin.dev`
 - http://www.suapapa.net
 
 
-Make a program to convert wordpress links to blogger link
-```
-https://homin.dev/wp2blogger?p=14
-```
+## TODO
 
-ex) https://homin.dev/asset/suapapa-blog/wp-content_uploads/image/suapapa.jpg
+- [ ] Make a program to convert wordpress links to blogger link `https://homin.dev/wp2blogger?p=14`
+- [ ] Migrate docker-composed WP to k8s
+- [ ] Remove Blogger blog
+- [x] Text wordpress with docker composer in local machine
+- [x] Make cache server for GCS bucket
+- [x] Move contents to GCS bucket
 
-- [How To Move Your Posts from WordPress To Blogger](https://wpsites.net/wordpress-tips/wordpress-to-blogger-how-to-move-your-blog-from-wordpress-to-blogger/)
+
+
+## Reference
 
 - [Original address](http://web.suapapa.net:8080/wordpress)
 - [suapapa's blog](http://suapapas-blog.blogspot.com/)
 - [Suapapa's blog setting](https://www.blogger.com/blog/settings/6032755754556829594)
-
-## Test wordpress in local docker
-
