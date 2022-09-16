@@ -1,6 +1,16 @@
+# Resouces to resotre Suapapa's blog
+
+This repository has Wordpress backup of Suapapa's blog
+which is on-lined from 2008 to 2013.
+
+Now all contents (without comment) are migrated to
+[Homin Lee's Blog](https://homin.dev/blog)
+
+## Image restore
+
 - 452objects, 37M
 
-## Update content links
+## Fix content links in WP exported xml
 
 Convert upload links to `https://homin.dev/asset/suapapa-blog/wp-content_uploads`:
 - http://web.suapapa.net:8080/wordpress/wp-content/uploads
@@ -19,17 +29,34 @@ Convert site address to `https://homin.dev`
 
 ## TODO
 
-- [ ] Make a program to convert wordpress links to blogger link `https://homin.dev/wp2blogger?p=14`
-- [ ] Migrate docker-composed WP to k8s
-- [ ] Remove Blogger blog
-- [x] Text wordpress with docker composer in local machine
+- [x] Import old posts to [Homin Lee's Blog](https://homin.dev/blog)
+- [x] Export Wordpress to Hugo
+- [x] Remove Blogger blog
+- [x] Test wordpress with docker composer in local machine
 - [x] Make cache server for GCS bucket
 - [x] Move contents to GCS bucket
 
-
-
 ## Reference
 
+- [WordPress to Hugo Exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)
 - [Original address](http://web.suapapa.net:8080/wordpress)
 - [suapapa's blog](http://suapapas-blog.blogspot.com/)
 - [Suapapa's blog setting](https://www.blogger.com/blog/settings/6032755754556829594)
+
+### Mysql backup
+
+```bash
+$ docker compose up
+$ docker exec -it wordpress-db-1 /bin/sh
+```
+```
+# mysqldump --add-drop-table -u wordpress -p wordpress > /var/lib/mysql/suapapasblog.sql
+```
+```bash
+$ cp ~/.local/share/docker/volumes/wordpress_db_data/_data/suapapasblog.sql ~/ws/suapapa-blog/
+
+```
+
+### Docker reference
+
+- wordpress_db_data path : `~/.local/share/docker/volumes/wordpress_db_data`
